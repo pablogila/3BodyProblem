@@ -6,40 +6,22 @@ G = 6.674e-11
 dt = 0.02
 time = 10
 t = np.arange(0, time, dt)
-max_mass = 1000000000000
-min_mass = 10000000000
-vel = 1
-distance = 5
+max_mass = 10000000000000
+min_mass = 1000000000000
+velocity = 4
+distance = 10
 view = 30
 
-"""
-# Calculate a random number of bodies
-n = np.random.randint(3, 6)
-
-for i in range(1,n+1):
-     x = np.random.uniform(-distance, distance)
-     X[i] = x
-     y = np.random.uniform(-distance, distance)
-     Y[i] = y
-     vx = np.random.uniform(-vel, vel)
-     Vx[i] = vx
-     vy = np.random.uniform(-vel, vel)
-     Vy[i] = vy
-     m = np.random.uniform(min_mass, max_mass)
-
-     print('x = {:.2f}, y = {:.2f}, vx = {:.2f}, vy = {:.2f}, m = {:.2e}'.format(x, y, vx, vy, m))
-"""
-
 x1, y1 = np.random.uniform(-distance, distance), np.random.uniform(-distance, distance)
-vx1, vy1 = np.random.uniform(-vel, vel), np.random.uniform(-vel, vel)
+vx1, vy1 = np.random.uniform(-velocity, velocity), np.random.uniform(-velocity, velocity)
 m1 = np.random.uniform(min_mass, max_mass)
 
 x2, y2 = np.random.uniform(-distance, distance), np.random.uniform(-distance, distance)
-vx2, vy2 = np.random.uniform(-vel, vel), np.random.uniform(-vel, vel)
+vx2, vy2 = np.random.uniform(-velocity, velocity), np.random.uniform(-velocity, velocity)
 m2 = np.random.uniform(min_mass, max_mass)
 
 x3, y3 = np.random.uniform(-distance, distance), np.random.uniform(-distance, distance)
-vx3, vy3 = np.random.uniform(-vel, vel), np.random.uniform(-vel, vel)
+vx3, vy3 = np.random.uniform(-velocity, velocity), np.random.uniform(-velocity, velocity)
 m3 = np.random.uniform(min_mass, max_mass)
 
 pos = np.zeros((3, len(t), 2))
@@ -84,10 +66,6 @@ ax.set_ylabel('')
 ax.set_title('Three Body Problem')
 ax.set_facecolor('black')
 
-#plt.rcParams['axes.spines.right'] = False
-#plt.rcParams['axes.spines.top'] = False
-#plt.rcParams['axes.spines.left'] = False
-#plt.rcParams['axes.spines.bottom'] = False
 plt.axis('off')
 
 line1, = ax.plot([], [], 'r--', linewidth=0.5)
