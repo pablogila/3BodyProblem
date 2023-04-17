@@ -1,1 +1,4 @@
 *.gif
+*.txt
+/.venv/
+!REQUIREMENTS.txt
